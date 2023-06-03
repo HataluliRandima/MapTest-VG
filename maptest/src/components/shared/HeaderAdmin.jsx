@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 import { Badge ,Flex, Text,Box,Avatar,AvatarBadge} from '@chakra-ui/react'
 
-function Header() {
+function HeaderAdmin() {
     const [displayusername, displayusernameupdate] = useState('');
 	const [showmenu, showmenuupdateupdate] = useState(true);
 
@@ -21,12 +21,12 @@ function Header() {
 
 
 
-			 let username = sessionStorage.getItem('username');
-            if (username === '' || username === null) {
-                navigate('/loginC');
-            } else {
-            displayusernameupdate(username);
-             }
+			// let username = sessionStorage.getItem('username');
+            // if (username === '' || username === null) {
+            //     navigate('/loginC');
+            // } else {
+            //     displayusernameupdate(username);
+            // }
 
 
 
@@ -125,7 +125,7 @@ function Header() {
   
   <Box ml='3'>
     <Text fontWeight='bold'>
-	{displayusername}
+      Segun Adebayo
       {/* <Badge ml='1' colorScheme='green'>
          
       </Badge> */}
@@ -140,4 +140,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderAdmin

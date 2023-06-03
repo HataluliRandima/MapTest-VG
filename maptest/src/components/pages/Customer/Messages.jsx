@@ -1,8 +1,11 @@
 import React from 'react'
+import ChatRooms from './ChatRooms'
 
 const Messages = () => {
   return (
-    <div>Messages</div>
+    <div>
+      <ChatRooms/>
+    </div>
   )
 }
 

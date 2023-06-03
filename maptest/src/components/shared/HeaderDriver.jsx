@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 import { Badge ,Flex, Text,Box,Avatar,AvatarBadge} from '@chakra-ui/react'
 
-function Header() {
+function HeaderDriver() {
     const [displayusername, displayusernameupdate] = useState('');
 	const [showmenu, showmenuupdateupdate] = useState(true);
 
@@ -21,12 +21,12 @@ function Header() {
 
 
 
-			 let username = sessionStorage.getItem('username');
-            if (username === '' || username === null) {
-                navigate('/loginC');
-            } else {
-            displayusernameupdate(username);
-             }
+			// let username = sessionStorage.getItem('username');
+            // if (username === '' || username === null) {
+            //     navigate('/loginC');
+            // } else {
+            //     displayusernameupdate(username);
+            // }
 
 
 
@@ -46,7 +46,7 @@ function Header() {
 				 
 			</div>
 			<div className="flex items-center gap-2 mr-2">
-				<Popover className="relative">
+				{/* <Popover className="relative">
 					{({ open }) => (
 						<>
 							<Popover.Button
@@ -75,13 +75,13 @@ function Header() {
 							</Transition>
 						</>
 					)}
-				</Popover>
+				</Popover> */}
 		 
-				<Menu as="div" className="relative">
+				{/* <Menu as="div" className="relative">
 					<div>
 						<Menu.Button className="ml-2 bg-black flex text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-400">
 							<span className="sr-only">Open user menu</span>
-                            <p className='text-white p-3'>CUSTOMER  </p>
+                            <p className='text-white p-3'>DRIVER  </p>
 						<p className='text-white p-3'>{displayusername}</p>	
 							<div
 								className="h-10 w-10 rounded-full bg-sky-500 bg-cover bg-no-repeat bg-center"
@@ -119,18 +119,18 @@ function Header() {
 							 
 						</Menu.Items>
 					</Transition>
-				</Menu>
+				</Menu> */}
 				<Flex>
 				<Avatar src='https://bit.ly/broken-link'/>
   
   <Box ml='3'>
     <Text fontWeight='bold'>
-	{displayusername}
+      Segun Adebayo
       {/* <Badge ml='1' colorScheme='green'>
          
       </Badge> */}
     </Text>
-    <Text fontSize='sm'>CUSTOMER</Text>
+    <Text fontSize='sm'>DRIVER</Text>
   </Box>
 </Flex>
 			</div>
@@ -140,4 +140,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderDriver

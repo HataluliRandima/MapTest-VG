@@ -1,8 +1,11 @@
 import React from 'react'
+import Chat from './Message/Chat'
 
 const Packages = () => {
   return (
-    <div>Packages</div>
+    <div>
+      <Chat/>
+    </div>
   )
 }
 

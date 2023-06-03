@@ -1,12 +1,152 @@
 import React ,{useState} from 'react'
 
  
-import { Link  } from 'react-router-dom'
+import { Link ,useNavigate  } from 'react-router-dom'
 
 const LoginC = () => {
 
+
+  const navigate = useNavigate();
     //for toggle
     const [Toggle, setToggle] = useState("Customer");
+
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+   
+
+    const handleCustomerLogin = async (username, password) => {
+      
+
+      let inputobj={"cEmail": username,
+          "cPassword": password};
+          fetch("https://localhost:7229/api/Customers/customerlogin",{
+              method:'POST',
+              headers:{'content-type':'application/json'},
+              body:JSON.stringify(inputobj)
+          }).then((res) => {
+              return res.json();
+          }).then((resp) => {
+              console.log(resp)
+              if (Object.keys(resp).length === 0) {
+                  console.log('Login failed, invalid credentials');
+              }else{
+                console.log('Success');
+                   sessionStorage.setItem('username',resp.name);
+                   sessionStorage.setItem('jwttokenC',resp.token);
+                 navigate('/dashboard')
+              }
+              
+          }).catch((err) => {
+              console.log('Login Failed due to :' + err.message);
+          });
+      // const res = await fetch("/login/patient", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     healthID,
+      //     password,
+      //   }),
+      // });
+  
+      // const data = await res.json();
+  
+      // if (data.errors) {
+      //   setUsernameError(data.errors.healthID);
+      //   setPasswordError(data.errors.password);
+      //   setLoading(false);
+      // } else {
+      //   setLoading(false);
+      //   props.settoastCondition({
+      //     status: "success",
+      //     message: "Logged in Successfully!!!",
+      //   });
+      //   props.setToastShow(true);
+      //   navigate("/patient/dashboard");
+      // }
+    };
+
+
+
+    const handledriverLogin = async (username, password) => {
+      
+
+      let inputobj={"cEmail": username,
+          "cPassword": password};
+          fetch("https://localhost:7012/api/Customers/customerlogin",{
+              method:'POST',
+              headers:{'content-type':'application/json'},
+              body:JSON.stringify(inputobj)
+          }).then((res) => {
+              return res.json();
+          }).then((resp) => {
+              console.log(resp)
+              if (Object.keys(resp).length === 0) {
+                  console.log('Login failed, invalid credentials');
+              }else{
+                console.log('Success');
+                   sessionStorage.setItem('username',username);
+                   sessionStorage.setItem('jwttokenD',resp.token);
+                 navigate('/dashd')
+              }
+              
+          }).catch((err) => {
+              console.log('Login Failed due to :' + err.message);
+          });
+ 
+    };
+
+
+    const handleAdminLogin = async (username, password) => {
+      
+
+      let inputobj={"cEmail": username,
+          "cPassword": password};
+          fetch("https://localhost:7012/api/Customers/customerlogin",{
+              method:'POST',
+              headers:{'content-type':'application/json'},
+              body:JSON.stringify(inputobj)
+          }).then((res) => {
+              return res.json();
+          }).then((resp) => {
+              console.log(resp)
+              if (Object.keys(resp).length === 0) {
+                  console.log('Login failed, invalid credentials');
+              }else{
+                console.log('Success');
+                   sessionStorage.setItem('username',username);
+                   sessionStorage.setItem('jwttokenC',resp.token);
+                 navigate('/dasha')
+              }
+              
+          }).catch((err) => {
+              console.log('Login Failed due to :' + err.message);
+          });
+ 
+    };
+
+
+
+
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      switch (Toggle) {
+        case "Customer":
+          handleCustomerLogin(username, password);
+          break;
+         case "Doctor":
+           handledriverLogin(username, password );
+           break;
+         case "Admin":
+           handleAdminLogin(username, password);
+          break;
+        default:
+          break;
+      }
+    };
 
   return (
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -30,6 +170,8 @@ const LoginC = () => {
           }
           onClick={() => {
             setToggle("Customer");
+            setUsername("");
+            setPassword("");
           }}
           
         >
@@ -45,6 +187,8 @@ const LoginC = () => {
           onClick={() =>
         {
             setToggle("Driver");
+            setUsername("");
+            setPassword("");
         }}
         >
           Driver
@@ -59,6 +203,8 @@ const LoginC = () => {
           onClick={() =>
             {
                 setToggle("Admin");
+                setUsername("");
+                setPassword("");
             }}
         >
           Admin
@@ -70,6 +216,7 @@ const LoginC = () => {
         <div class="py-4">
           <span class="mb-2 text-md">Email</span>
           <input
+          value={username} onChange={e => setUsername(e.target.value)}
             type="text"
             class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
             name="email"
@@ -79,6 +226,7 @@ const LoginC = () => {
         <div class="py-4">
           <span class="mb-2 text-md">Password</span>
           <input
+          value={password} onChange={e => setPassword(e.target.value)}
             type="password"
             name="pass"
             id="pass"
@@ -93,6 +241,7 @@ const LoginC = () => {
         </div>
         <button
           class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+          onClick={handleLogin}
         >
           Sign in
         </button>
