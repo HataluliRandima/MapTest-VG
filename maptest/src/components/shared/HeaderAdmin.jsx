@@ -46,7 +46,7 @@ function HeaderAdmin() {
 				 
 			</div>
 			<div className="flex items-center gap-2 mr-2">
-				<Popover className="relative">
+				{/* <Popover className="relative">
 					{({ open }) => (
 						<>
 							<Popover.Button
@@ -75,9 +75,9 @@ function HeaderAdmin() {
 							</Transition>
 						</>
 					)}
-				</Popover>
+				</Popover> */}
 		 
-				<Menu as="div" className="relative">
+				{/* <Menu as="div" className="relative">
 					<div>
 						<Menu.Button className="ml-2 bg-black flex text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-400">
 							<span className="sr-only">Open user menu</span>
@@ -119,18 +119,18 @@ function HeaderAdmin() {
 							 
 						</Menu.Items>
 					</Transition>
-				</Menu>
+				</Menu> */}
 				<Flex>
 				<Avatar src='https://bit.ly/broken-link'/>
   
   <Box ml='3'>
     <Text fontWeight='bold'>
-      Segun Adebayo
+      Musanda Randima
       {/* <Badge ml='1' colorScheme='green'>
          
       </Badge> */}
     </Text>
-    <Text fontSize='sm'>CUSTOMER</Text>
+    <Text fontSize='sm'>ADMIN</Text>
   </Box>
 </Flex>
 			</div>

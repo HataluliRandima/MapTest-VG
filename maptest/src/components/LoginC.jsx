@@ -74,9 +74,9 @@ const LoginC = () => {
     const handledriverLogin = async (username, password) => {
       
 
-      let inputobj={"cEmail": username,
-          "cPassword": password};
-          fetch("https://localhost:7012/api/Customers/customerlogin",{
+      let inputobj={"dEmail": username,
+          "dPassword": password};
+          fetch("https://localhost:7229/api/Drivers/Driverlogin",{
               method:'POST',
               headers:{'content-type':'application/json'},
               body:JSON.stringify(inputobj)
@@ -88,7 +88,7 @@ const LoginC = () => {
                   console.log('Login failed, invalid credentials');
               }else{
                 console.log('Success');
-                   sessionStorage.setItem('username',username);
+                   sessionStorage.setItem('usernamedriver',resp.name);
                    sessionStorage.setItem('jwttokenD',resp.token);
                  navigate('/dashd')
               }
@@ -103,28 +103,35 @@ const LoginC = () => {
     const handleAdminLogin = async (username, password) => {
       
 
-      let inputobj={"cEmail": username,
-          "cPassword": password};
-          fetch("https://localhost:7012/api/Customers/customerlogin",{
-              method:'POST',
-              headers:{'content-type':'application/json'},
-              body:JSON.stringify(inputobj)
-          }).then((res) => {
-              return res.json();
-          }).then((resp) => {
-              console.log(resp)
-              if (Object.keys(resp).length === 0) {
-                  console.log('Login failed, invalid credentials');
-              }else{
-                console.log('Success');
-                   sessionStorage.setItem('username',username);
-                   sessionStorage.setItem('jwttokenC',resp.token);
-                 navigate('/dasha')
-              }
+      if(username == "admin@gmail.com"&& password == "123456") {
+        navigate('/dasha')
+      }
+      else{
+        console.log('Login failed, invalid credentials');
+      }
+
+      // let inputobj={"cEmail": username,
+      //     "cPassword": password};
+      //     fetch("https://localhost:7012/api/Customers/customerlogin",{
+      //         method:'POST',
+      //         headers:{'content-type':'application/json'},
+      //         body:JSON.stringify(inputobj)
+      //     }).then((res) => {
+      //         return res.json();
+      //     }).then((resp) => {
+      //         console.log(resp)
+      //         if (Object.keys(resp).length === 0) {
+      //             console.log('Login failed, invalid credentials');
+      //         }else{
+      //           console.log('Success');
+      //              sessionStorage.setItem('username',username);
+      //              sessionStorage.setItem('jwttokenC',resp.token);
+      //            navigate('/dasha')
+      //         }
               
-          }).catch((err) => {
-              console.log('Login Failed due to :' + err.message);
-          });
+      //     }).catch((err) => {
+      //         console.log('Login Failed due to :' + err.message);
+      //     });
  
     };
 
@@ -137,7 +144,7 @@ const LoginC = () => {
         case "Customer":
           handleCustomerLogin(username, password);
           break;
-         case "Doctor":
+         case "Driver":
            handledriverLogin(username, password );
            break;
          case "Admin":

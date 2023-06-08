@@ -16,6 +16,7 @@ body {
     overflow-y: scroll;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    
   }
   .table1 {
     width: auto;

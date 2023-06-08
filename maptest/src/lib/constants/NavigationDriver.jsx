@@ -9,6 +9,22 @@ import {
 	HiOutlineCog
 } from 'react-icons/hi'
 
+import {
+	TbTruckDelivery
+} from 'react-icons/tb'
+import {
+	GiHandTruck
+} from 'react-icons/gi'
+import {
+	VscFeedback,
+	VscAccount
+} from 'react-icons/vsc'
+import {
+	TbPackageImport
+} from 'react-icons/tb'
+
+
+
 export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'dashboard',
@@ -16,24 +32,31 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		path: '/dashd',
 		icon: <HiOutlineViewGrid />
 	},
-    {
-		key: 'booking',
-		label: 'Bookings',
-		path: '/Bookings',
-		icon: <HiOutlineDocumentText />
-	},
-	{
-		key: 'packages',
-		label: 'Packages',
-		path: '/packages',
-		icon: <HiOutlineCube />
-	},
+	  {
+	  	key: 'ordersassigne',
+	  	label: 'Orders Assigned',
+	  	path: '/orderass',
+	  	icon: <TbPackageImport />
+	  },
 	{
 		key: 'orders',
 		label: 'Orders',
-		path: '/orders',
-		icon: <HiOutlineShoppingCart />
+		path: '/ordersd',
+		icon: <GiHandTruck />
 	},
+    {
+		key: 'trucks',
+		label: 'Trucks',
+		path: '/trucks',
+		icon: <TbTruckDelivery />
+	},
+	// {
+	// 	key: 'packages',
+	// 	label: 'Packages',
+	// 	path: '/packages',
+	// 	icon: <HiOutlineCube />
+	// },
+	
 	// {
 	// 	key: 'customers',
 	// 	label: 'Customers',
@@ -43,28 +66,34 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'transactions',
 		label: 'Transactions',
-		path: '/transactions',
+		path: '/payments',
 		icon: <HiOutlineDocumentText />
 	},
 	{
 		key: 'messages',
 		label: 'Messages',
-		path: '/messages',
+		path: '/chatdd',
 		icon: <HiOutlineAnnotation />
+	},
+	{
+		key: 'Feedback',
+		label: 'Customers Feedback',
+		path: '/customef',
+		icon: <VscFeedback />
 	}
 ]
 
 export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
 	{
 		key: 'settings',
-		label: 'Settings',
+		label: 'Profile',
 		path: '/settings',
-		icon: <HiOutlineCog />
-	},
-	{
-		key: 'support',
-		label: 'Help & Support',
-		path: '/support',
-		icon: <HiOutlineQuestionMarkCircle />
+		icon: <VscAccount />
 	}
+	// {
+	// 	key: 'support',
+	// 	label: 'Help & Support',
+	// 	path: '/support',
+	// 	icon: <HiOutlineQuestionMarkCircle />
+	// }
 ]

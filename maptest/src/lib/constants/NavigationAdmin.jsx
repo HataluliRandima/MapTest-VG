@@ -16,6 +16,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		path: '/dasha',
 		icon: <HiOutlineViewGrid />
 	},
+	{
+		key: 'booking',
+		label: 'Drivers Request',
+		path: '/requestdriver',
+		icon: <HiOutlineDocumentText />
+	},
     {
 		key: 'booking',
 		label: 'Bookings',

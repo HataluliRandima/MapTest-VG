@@ -21,12 +21,32 @@ import LayoutDriver from './components/shared/LayoutDriver';
 import DashboardDriver from './components/pages/Driver/DashboardDriver';
 import LayoutAdmin from './components/shared/LayoutAdmin';
 import DashboardAdmin from './components/pages/Admin/DashboardAdmin';
+import Trucks from './components/pages/Driver/Trucks/Trucks';
+import ViewTrucks from './components/pages/Driver/Trucks/ViewTrucks';
+import OrdersDriver from './components/pages/Driver/Orders/OrdersDriver';
+import TableSun from './components/pages/Driver/Table/TableSun';
+import OrdersAssigned from './components/pages/Driver/Orders/OrdersAssigned';
+import Payments from './components/pages/Driver/Payments/Payments';
+import CustomerFeedback from './components/pages/Driver/FeedBack/CustomerFeedback';
+import ChatDriver from './components/pages/Driver/Message/ChatDriver';
+import TableOrders from './components/pages/Driver/Orders/TableOrders';
+import TableScroll from './components/pages/Customer/TableScroll';
+import DriverRequest from './components/pages/Admin/DriverRequest/DriverRequest';
 
+
+const Helloasa = <TableScroll />;
+
+const HelloOrders = <TableOrders />;
 
 const HelloList = <AddBooking />;
+
 const HelloList22 = <TableTest />;
 
 const HelloList33 = <TrackOrder />;
+
+const Hata = <ViewTrucks />;
+
+const Hataluli = <TableSun />;
 
 function App() {
 
@@ -80,12 +100,39 @@ function App() {
             <Route   element={<LayoutDriver />}>
 
             <Route path="dashd" element={<DashboardDriver />} />
+            <Route path="orderass" element={<OrdersAssigned />} />
+            <Route path="payments" element={<Payments />} />
+            <Route path="customef" element={<CustomerFeedback />} />
+            <Route path="chatdd" element={<ChatDriver/>} />
+            <Route path="trucks" element={<Trucks 
+             title={"TRUCKS"}
+             tabs={[
+              
+               { name: "View Unverified Trucks", content: Helloasa },
+               
+                { name: "View Verified Trucks", content: HelloList22 },
+                { name: "View Operating Trucks", content: Hata },
+              //  { name: "Hello 33", content: HelloList22 },
+             ]} />} />
+
+            <Route path="ordersd" element={<OrdersDriver 
+             title={"ORDERS"}
+             tabs={[
+              
+               { name: "View Orders", content: HelloOrders },
+               
+                { name: "View Order Map", content: HelloList22 },
+                { name: "View Tucks", content: HelloOrders },
+              //  { name: "Hello 33", content: HelloList22 },
+             ]} />} />
+
             </Route>
 
 
             <Route   element={<LayoutAdmin />}>
 
             <Route path="dasha" element={<DashboardAdmin />} />
+            <Route path="requestdriver" element={<DriverRequest />} />
             </Route>
 
 

@@ -47,7 +47,7 @@ const TableScroll = () => {
 
   return (
     <div className="App">
-    <div className="container">
+    <div className="container pt-20">
       <table className='table1' {...getTableProps()}>
         <thead className='thead1 ' >
           {headerGroups.map((headerGroup) => (

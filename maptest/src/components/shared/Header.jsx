@@ -21,12 +21,13 @@ function Header() {
 
 
 
-			 let username = sessionStorage.getItem('username');
-            if (username === '' || username === null) {
-                navigate('/loginC');
-            } else {
-            displayusernameupdate(username);
-             }
+			  let username = sessionStorage.getItem('username');
+			  displayusernameupdate(username);
+            // if (username === '' || username === null) {
+            //     navigate('/loginC');
+            // } else {
+            // displayusernameupdate(username);
+            //  }
 
 
 

@@ -21,7 +21,8 @@ function HeaderDriver() {
 
 
 
-			// let username = sessionStorage.getItem('username');
+			  let username = sessionStorage.getItem('usernamedriver');
+			  displayusernameupdate(username);
             // if (username === '' || username === null) {
             //     navigate('/loginC');
             // } else {
@@ -125,7 +126,7 @@ function HeaderDriver() {
   
   <Box ml='3'>
     <Text fontWeight='bold'>
-      Segun Adebayo
+      {displayusername}
       {/* <Badge ml='1' colorScheme='green'>
          
       </Badge> */}
