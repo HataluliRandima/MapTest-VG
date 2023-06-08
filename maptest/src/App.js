@@ -32,6 +32,7 @@ import ChatDriver from './components/pages/Driver/Message/ChatDriver';
 import TableOrders from './components/pages/Driver/Orders/TableOrders';
 import TableScroll from './components/pages/Customer/TableScroll';
 import DriverRequest from './components/pages/Admin/DriverRequest/DriverRequest';
+import RequestUpdate from './components/pages/Admin/DriverRequest/RequestUpdate';
 
 
 const Helloasa = <TableScroll />;
@@ -133,6 +134,8 @@ function App() {
 
             <Route path="dasha" element={<DashboardAdmin />} />
             <Route path="requestdriver" element={<DriverRequest />} />
+            <Route path="requestdriver/update/:code" element={<RequestUpdate />} />
+            {/* 'customer/edit/:code' */}
             </Route>
 
 

@@ -42,8 +42,10 @@ const ProgressBar = ({trackingStatus}) => {
 
   return (
     <div className='container'>
-        {hatya}
+        
        <Progress colorScheme={color} size='lg' value={now} /> 
+
+       {hatya}
     </div>
   )
 }

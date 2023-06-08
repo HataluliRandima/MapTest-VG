@@ -159,7 +159,13 @@ import ProgressBar from './ProgressBar'
         <Heading size='md' textTransform='uppercase'>
           Your Order Progress
         </Heading>
+
+
         <ProgressBar trackingStatus="Delivered" />
+
+
+
+        
         <Text pt='2' fontSize='sm'>
           Check out the overview of your clients.
         </Text>
