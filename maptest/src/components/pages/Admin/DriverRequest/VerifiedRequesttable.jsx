@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 //import { format } from 'date-fns'
 import { Link } from "react-router-dom";
@@ -235,7 +237,7 @@ const recentOrderData = [
   },
 ];
 
-const RequestTable = () => {
+const VerifiedRequesttable = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navigate=useNavigate();
@@ -269,7 +271,7 @@ const RequestTable = () => {
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1
      shadow-lg shadow-slate-500">
-      <h1 className="text-gray-700 font-medium text-lg text-center underline items-center">ALL REQUEST </h1>
+      <strong className="text-gray-700 font-medium">ALL REQUEST </strong>
       <div className="border-x border-gray-200 rounded-sm mt-3">
         <table className="w-full text-gray-700 overflow-hidden border-collapse shadow-md">
           <thead className="bg-black text-white">
@@ -281,7 +283,7 @@ const RequestTable = () => {
               <th>Contact</th>
               {/* <th>Order Status</th> */}
               <th>Download</th>
-              <th>Update Status</th>
+              {/* <th>Update Status</th> */}
             </tr>
           </thead>
           <tbody className="overflow-y-scroll">
@@ -309,13 +311,13 @@ const RequestTable = () => {
                     <GoDesktopDownload size={30} />
                   </a>
                 </td>
-                <td className="px-10">
+                {/* <td className="px-10">
                   {" "}
-                  {/* to={`/order/${driver.dsId}`} */}
+                  
                   <Link  to={`/requestdriver/update/` +driver.dsId }>
                     <FiEdit size={30} />
                   </Link>
-                </td>
+                </td> */}
 
                 <Modal
                   initialFocusRef={initialRef}
@@ -349,4 +351,4 @@ const RequestTable = () => {
   );
 };
 
-export default RequestTable;
+export default VerifiedRequesttable;

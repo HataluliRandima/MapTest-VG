@@ -1,8 +1,10 @@
+
+
 import React, { useState } from 'react'
  
-import '../../../../assets/styles/Request.css';
+import '../../../../assets/styles/Customerbook.css';
 
-const DriverRequest = ({ title, tabs = [] }) => {
+const CostomerBooking = ({ title, tabs = [] }) => {
 
 
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -45,4 +47,4 @@ const DriverRequest = ({ title, tabs = [] }) => {
   )
 }
 
-export default DriverRequest
+export default CostomerBooking

@@ -33,6 +33,11 @@ import TableOrders from './components/pages/Driver/Orders/TableOrders';
 import TableScroll from './components/pages/Customer/TableScroll';
 import DriverRequest from './components/pages/Admin/DriverRequest/DriverRequest';
 import RequestUpdate from './components/pages/Admin/DriverRequest/RequestUpdate';
+import RequestTable from './components/pages/Admin/DriverRequest/RequestTable';
+import VerifiedRequesttable from './components/pages/Admin/DriverRequest/VerifiedRequesttable';
+import CostomerBooking from './components/pages/Admin/BookingCheck/CostomerBooking';
+import BookRequestAccCust from './components/pages/Admin/BookingCheck/BookRequestAccCust';
+import BookRequestCust from './components/pages/Admin/BookingCheck/BookRequestCust';
 
 
 const Helloasa = <TableScroll />;
@@ -48,6 +53,14 @@ const HelloList33 = <TrackOrder />;
 const Hata = <ViewTrucks />;
 
 const Hataluli = <TableSun />;
+
+const HelloRequestVerified = <RequestTable />;
+
+const HelloRequestUnVerified = <VerifiedRequesttable />;
+
+const Hellocustomerbookingv = <BookRequestAccCust />;
+
+const Hellocustomerbookingunv = <BookRequestCust />;
 
 function App() {
 
@@ -133,9 +146,29 @@ function App() {
             <Route   element={<LayoutAdmin />}>
 
             <Route path="dasha" element={<DashboardAdmin />} />
-            <Route path="requestdriver" element={<DriverRequest />} />
+            <Route path="requestdriver" element={<DriverRequest 
+             title={"Drivers Request"}
+             tabs={[
+              
+               { name: "Unverified Request", content: HelloRequestVerified },
+               
+                { name: "Verified Request", content: HelloRequestUnVerified },
+                
+               
+             ]}/>} />
             <Route path="requestdriver/update/:code" element={<RequestUpdate />} />
             {/* 'customer/edit/:code' */}
+
+            <Route path="costbooking" element={<CostomerBooking
+            title={"Customer Bookings"}
+            tabs={[
+             
+              { name: "Unverified Bookings", content: Hellocustomerbookingunv },
+              
+               { name: "Verified Bookings", content: Hellocustomerbookingv },
+               
+              
+            ]} />} />
             </Route>
 
 

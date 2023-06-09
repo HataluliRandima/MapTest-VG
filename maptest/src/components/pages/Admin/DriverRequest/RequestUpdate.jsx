@@ -112,7 +112,7 @@ import {
   
   
     return (
-        <div><h1 className='underline font-bold'>BOOKING FORM</h1>
+        <div><h1 className='underline font-bold text-center text-lg capitalize'>Verifying Driver Request</h1>
       <Flex
      position='relative'
      flexDirection='column'
@@ -180,13 +180,19 @@ import {
             <Textarea placeholder='If not sure of vehichle then details what kind of package you have' />
               </FormControl> */}
               <FormControl>
-                <FormLabel>Vehicle</FormLabel>
-                <Select placeholder='Select Vehicle'>
-                  <option value='option1'>Bakkie</option>
-                  <option value='option2'>Small Truck 2</option>
+                <FormLabel>Verifying</FormLabel>
+                <Select placeholder='Select Status'>
+                  <option value='option1'>Accept</option>
+                  <option value='option2'>Decline </option>
                    <option value='option3'>Big Truck</option>
                 </Select>
             </FormControl>
+
+
+            {/* <FormControl>
+            <FormLabel>FeedBack </FormLabel>
+            <Textarea placeholder='Reason for the validity' />
+              </FormControl> */}
             
           </Box>
         </HStack>

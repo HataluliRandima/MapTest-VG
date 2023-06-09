@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 //import { format } from 'date-fns'
 import { Link } from "react-router-dom";
@@ -235,7 +237,31 @@ const recentOrderData = [
   },
 ];
 
-const RequestTable = () => {
+
+const recentBookingData = [
+    {
+      id: "1",
+      product_id: "4324",
+      customer_id: "23143",
+      customer_name: "Shirley A. Lape",
+      order_date: "2022-05-17T03:24:00",
+      order_total: "$435.50",
+      current_order_status: "PLACED",
+      shipment_address: "Cottage Grove, OR 97424",
+    },
+    {
+      id: "2",
+      product_id: "7453",
+      customer_id: "96453",
+      customer_name: "Ryan Carroll",
+      order_date: "2022-05-14T05:24:00",
+      order_total: "$96.35",
+      current_order_status: "CONFIRMED",
+      shipment_address: "Los Angeles, CA 90017",
+    }
+];
+
+const BookRequestCust = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navigate=useNavigate();
@@ -269,7 +295,7 @@ const RequestTable = () => {
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1
      shadow-lg shadow-slate-500">
-      <h1 className="text-gray-700 font-medium text-lg text-center underline items-center">ALL REQUEST </h1>
+      <h1 className="text-gray-700 font-medium text-lg text-center underline items-center">ALL BOOKINGS </h1>
       <div className="border-x border-gray-200 rounded-sm mt-3">
         <table className="w-full text-gray-700 overflow-hidden border-collapse shadow-md">
           <thead className="bg-black text-white">
@@ -285,10 +311,10 @@ const RequestTable = () => {
             </tr>
           </thead>
           <tbody className="overflow-y-scroll">
-            {drivers.map((driver) => (
-              <tr key={driver.dsId}>
+            {recentBookingData.map((driver) => (
+              <tr key={driver.id}>
                 <td>
-                  <Link to={`/order/${driver.dsId}`}>#{driver.dsId}</Link>
+                  <Link to={`/order/${driver.product_id}`}>#{driver.product_id}</Link>
                 </td>
                 {/* <td>
                             <Link to={`/product/${order.product_id}`}>#{order.product_id}</Link>
@@ -296,15 +322,15 @@ const RequestTable = () => {
                 {/* <td>
                             <Link to={`/customer/${driver.customer_id}`}>{order.customer_name}</Link>
                         </td> */}
-                <td>{driver.dsName}</td>
-                <td>{driver.dsSurname}</td>
-                <td>{driver.dsEmail}</td>
-                <td>{driver.dsNumber}</td>
+                <td>{driver.customer_name}</td>
+                <td>{driver.order_date}</td>
+                <td>{driver.shipment_address}</td>
+                <td>{driver.shipment_address}</td>
                 {/* <td>{getOrderStatus(order.current_order_status)}</td> */}
                 <td className="px-6">
                   {" "}
                   <a
-                    href={`${baseUrl}/DriverStorage/download/${driver.dsDoc1}`}
+                    href={`${baseUrl}/DriverStorage/download/${driver.shipment_address}`}
                   >
                     <GoDesktopDownload size={30} />
                   </a>
@@ -312,7 +338,7 @@ const RequestTable = () => {
                 <td className="px-10">
                   {" "}
                   {/* to={`/order/${driver.dsId}`} */}
-                  <Link  to={`/requestdriver/update/` +driver.dsId }>
+                  <Link  to={`/requestdriver/update/` +driver.id }>
                     <FiEdit size={30} />
                   </Link>
                 </td>
@@ -349,4 +375,4 @@ const RequestTable = () => {
   );
 };
 
-export default RequestTable;
+export default BookRequestCust;

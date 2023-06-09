@@ -9,6 +9,11 @@ import {
 	HiOutlineCog
 } from 'react-icons/hi'
 
+import {
+	VscGitPullRequestGoToChanges
+} from 'react-icons/vsc'
+
+
 export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'dashboard',
@@ -17,16 +22,16 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		icon: <HiOutlineViewGrid />
 	},
 	{
-		key: 'booking',
+		key: 'request',
 		label: 'Drivers Request',
 		path: '/requestdriver',
 		icon: <HiOutlineDocumentText />
 	},
     {
 		key: 'booking',
-		label: 'Bookings',
-		path: '/Bookings',
-		icon: <HiOutlineDocumentText />
+		label: 'Customer Booking',
+		path: '/costbooking',
+		icon: <VscGitPullRequestGoToChanges />
 	},
 	{
 		key: 'packages',
