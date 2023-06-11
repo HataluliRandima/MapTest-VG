@@ -247,7 +247,7 @@ const recentBookingData = [
       order_date: "2022-05-17T03:24:00",
       order_total: "$435.50",
       current_order_status: "PLACED",
-      shipment_address: "Cottage Grove, OR 97424",
+      shipment_address: "34 Threadneedle Street, Brixton, Johannesburg, South Africa",
     },
     {
       id: "2",
@@ -295,27 +295,32 @@ const BookRequestCust = () => {
   return (
     <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1
      shadow-lg shadow-slate-500">
-      <h1 className="text-gray-700 font-medium text-lg text-center underline items-center">ALL BOOKINGS </h1>
+      <h1 className="text-gray-700 font-bold text-lg text-center underline items-center">ALL BOOKINGS </h1>
+      <h1 className="text-gray-700 font-medium text-lg     ">Customer Details </h1>
       <div className="border-x border-gray-200 rounded-sm mt-3">
         <table className="w-full text-gray-700 overflow-hidden border-collapse shadow-md">
           <thead className="bg-black text-white">
             <tr>
-              <th>ID</th>
-              <th>Driver Name</th>
-              <th>Driver Surname </th>
-              <th>Email</th>
-              <th>Contact</th>
+              {/* <th>ID</th> */}
+              <th> Name</th>
+              <th> Surname </th>
+              <th> Email</th>
+              <th>Booking Date</th>
+             <th> PICK UP </th>
+              <th>Destination  </th>
               {/* <th>Order Status</th> */}
-              <th>Download</th>
+              <th>Booking Time</th>
+              <th>Vehicle</th>
               <th>Update Status</th>
             </tr>
           </thead>
           <tbody className="overflow-y-scroll">
             {recentBookingData.map((driver) => (
               <tr key={driver.id}>
-                <td>
+                {/* <td>
                   <Link to={`/order/${driver.product_id}`}>#{driver.product_id}</Link>
-                </td>
+                </td> */}
+
                 {/* <td>
                             <Link to={`/product/${order.product_id}`}>#{order.product_id}</Link>
                         </td> */}
@@ -326,15 +331,19 @@ const BookRequestCust = () => {
                 <td>{driver.order_date}</td>
                 <td>{driver.shipment_address}</td>
                 <td>{driver.shipment_address}</td>
+                <td>{driver.shipment_address}</td>
+                <td>{driver.shipment_address}</td>
+                <td>{driver.shipment_address}</td>
                 {/* <td>{getOrderStatus(order.current_order_status)}</td> */}
-                <td className="px-6">
+                {/* <td className="px-6">
                   {" "}
                   <a
                     href={`${baseUrl}/DriverStorage/download/${driver.shipment_address}`}
                   >
                     <GoDesktopDownload size={30} />
                   </a>
-                </td>
+                </td> */}
+                <td>{driver.shipment_address}</td>
                 <td className="px-10">
                   {" "}
                   {/* to={`/order/${driver.dsId}`} */}

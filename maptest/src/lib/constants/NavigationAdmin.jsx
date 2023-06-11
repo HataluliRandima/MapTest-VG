@@ -34,6 +34,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		icon: <VscGitPullRequestGoToChanges />
 	},
 	{
+		key: 'orders',
+		label: 'Order Assigning',
+		path: '/orderassign',
+		icon: <HiOutlineShoppingCart />
+	},
+	{
 		key: 'packages',
 		label: 'Packages',
 		path: '/packages',

@@ -247,7 +247,7 @@ const LoginC = () => {
           <button className='font-bold text-base text-slate-500'>Forgot password ?</button>
         </div>
         <button
-          class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300"
+          class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-black hover:text-white hover:border hover:border-gray-300"
           onClick={handleLogin}
         >
           Sign in

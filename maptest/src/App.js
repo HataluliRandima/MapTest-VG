@@ -38,6 +38,7 @@ import VerifiedRequesttable from './components/pages/Admin/DriverRequest/Verifie
 import CostomerBooking from './components/pages/Admin/BookingCheck/CostomerBooking';
 import BookRequestAccCust from './components/pages/Admin/BookingCheck/BookRequestAccCust';
 import BookRequestCust from './components/pages/Admin/BookingCheck/BookRequestCust';
+import OrderAssign from './components/pages/Admin/OrdersReq/OrderAssign';
 
 
 const Helloasa = <TableScroll />;
@@ -169,7 +170,25 @@ function App() {
                
               
             ]} />} />
+
+
+            <Route path="orderassign" element={<OrderAssign
+            title={"Order Assigning Driver"}
+            tabs={[
+             
+              { name: "Unverified Bookings", content: Hellocustomerbookingunv },
+              
+               { name: "Verified Bookings", content: Hellocustomerbookingv },
+               
+              
+            ]} />} />
+
+
+
             </Route>
+
+
+            
 
 
             </Routes>
