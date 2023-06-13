@@ -164,7 +164,7 @@ import {
         zIndex='1'
       >
 
-<h1>Hata</h1>
+{/* <h1>Hata</h1>
         <HStack spacing={2} justifyContent='space-between'>
           <Box flexGrow={1}>
             <Autocomplete>
@@ -263,7 +263,7 @@ import {
               map.setZoom(15)
             }}
           />
-        </HStack>
+        </HStack> */}
       </Box>
     </Flex>
     );

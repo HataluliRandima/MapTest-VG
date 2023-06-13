@@ -3,8 +3,11 @@ import React ,{useState} from 'react'
  
 import { Link ,useNavigate  } from 'react-router-dom'
 
+import { useToast } from '@chakra-ui/react'
+
 const LoginC = () => {
 
+  const toast = useToast();
 
   const navigate = useNavigate();
     //for toggle
@@ -13,6 +16,20 @@ const LoginC = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+
+    const showToast = () =>{
+      toast({
+        title: 'Account created.',
+        description: "We've created your account for you.",
+        status: 'success',
+        variant:'left-accent',
+        position: 'top-right',
+        duration: 9000,
+        isClosable: true,
+      })
+
+    }
 
    
 
@@ -35,7 +52,8 @@ const LoginC = () => {
                 console.log('Success');
                    sessionStorage.setItem('username',resp.name);
                    sessionStorage.setItem('jwttokenC',resp.token);
-                 navigate('/dashboard')
+                 navigate('/dashboard');
+                 showToast();
               }
               
           }).catch((err) => {
@@ -104,7 +122,8 @@ const LoginC = () => {
       
 
       if(username == "admin@gmail.com"&& password == "123456") {
-        navigate('/dasha')
+        navigate('/dasha');
+        showToast();
       }
       else{
         console.log('Login failed, invalid credentials');

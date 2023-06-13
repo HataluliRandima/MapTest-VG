@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Mine from './Mine'
+import Hata from './Hata'
 import LoginC from './components/LoginC';
 import RegisterC from './components/RegisterC';
 import NavBar from './components/NavBar';
@@ -39,6 +40,9 @@ import CostomerBooking from './components/pages/Admin/BookingCheck/CostomerBooki
 import BookRequestAccCust from './components/pages/Admin/BookingCheck/BookRequestAccCust';
 import BookRequestCust from './components/pages/Admin/BookingCheck/BookRequestCust';
 import OrderAssign from './components/pages/Admin/OrdersReq/OrderAssign';
+import UnAssignedOrder from './components/pages/Admin/OrdersReq/UnAssignedOrder';
+
+
 
 
 const Helloasa = <TableScroll />;
@@ -51,7 +55,7 @@ const HelloList22 = <TableTest />;
 
 const HelloList33 = <TrackOrder />;
 
-const Hata = <ViewTrucks />;
+const Hata111 = <ViewTrucks />;
 
 const Hataluli = <TableSun />;
 
@@ -62,6 +66,8 @@ const HelloRequestUnVerified = <VerifiedRequesttable />;
 const Hellocustomerbookingv = <BookRequestAccCust />;
 
 const Hellocustomerbookingunv = <BookRequestCust />;
+
+const HelloOrdersUnAssigned = <UnAssignedOrder/>
 
 function App() {
 
@@ -81,6 +87,7 @@ function App() {
             {/* <Route path="/messages" element={<Messages />} /> */}
             <Route path="/add" element={<AddOrder />} />
             <Route path="/anime" element={<Testanime />} />
+            <Route path="/hata" element={<Hata />} />
 
             <Route   element={<Layout />}>
                      <Route path="dashboard" element={<Dashboard />} />
@@ -126,7 +133,7 @@ function App() {
                { name: "View Unverified Trucks", content: Helloasa },
                
                 { name: "View Verified Trucks", content: HelloList22 },
-                { name: "View Operating Trucks", content: Hata },
+                { name: "View Operating Trucks", content: Hata111 },
               //  { name: "Hello 33", content: HelloList22 },
              ]} />} />
 
@@ -176,9 +183,9 @@ function App() {
             title={"Order Assigning Driver"}
             tabs={[
              
-              { name: "Unverified Bookings", content: Hellocustomerbookingunv },
+              { name: "UnAssigned Orders", content: HelloOrdersUnAssigned },
               
-               { name: "Verified Bookings", content: Hellocustomerbookingv },
+               { name: "Assigned Orders", content: Hellocustomerbookingv },
                
               
             ]} />} />

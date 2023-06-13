@@ -74,9 +74,9 @@ import {
   
     return (
       <Flex
-      position='relative'
-      flexDirection='column'
-      alignItems='center'
+       position='relative'
+       flexDirection='column'
+       alignItems='end'
       h='100vh'
       w='100vw'
     >
