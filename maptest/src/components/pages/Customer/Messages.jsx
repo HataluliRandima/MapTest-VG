@@ -1,10 +1,12 @@
 import React from 'react'
 import ChatRooms from './ChatRooms'
+import AllRooms from './Message/AllRooms'
 
 const Messages = () => {
   return (
     <div>
-      <ChatRooms/>
+      {/* <ChatRooms/> */}
+      <AllRooms/>
     </div>
   )
 }

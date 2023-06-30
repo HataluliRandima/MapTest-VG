@@ -9,6 +9,15 @@ import {
 	HiOutlineCog
 } from 'react-icons/hi'
 
+import { BsPersonCheck } from 'react-icons/bs'
+
+import {GiPayMoney } from 'react-icons/gi'
+
+import { VscFeedback } from 'react-icons/vsc'
+
+import { FcFeedback } from 'react-icons/fc'
+
+
 export const DASHBOARD_SIDEBAR_LINKS = [
 	{
 		key: 'dashboard',
@@ -51,20 +60,42 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		label: 'Messages',
 		path: '/messages',
 		icon: <HiOutlineAnnotation />
+	},
+	{
+		key: 'payments',
+		label: 'Payments',
+		path: '/payments11',
+		icon: <GiPayMoney />
+	},
+	{
+		key: 'feedback',
+		label: 'FeedBack',
+		path: '/feedbackc',
+		icon: <VscFeedback />
+	},
+	{
+		key: 'enquiry',
+		label: 'Enquiry',
+		path: '/enqq',
+		icon: <FcFeedback />
 	}
+
+
+
+	
 ]
 
 export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
 	{
-		key: 'settings',
-		label: 'Settings',
-		path: '/settings',
-		icon: <HiOutlineCog />
+		key: 'profile',
+		label: 'Profile',
+		path: '/profile',
+		icon: <BsPersonCheck />
 	},
-	{
-		key: 'support',
-		label: 'Help & Support',
-		path: '/support',
-		icon: <HiOutlineQuestionMarkCircle />
-	}
+	// {
+	// 	key: 'support',
+	// 	label: 'Help & Support',
+	// 	path: '/support',
+	// 	icon: <HiOutlineQuestionMarkCircle />
+	// }
 ]

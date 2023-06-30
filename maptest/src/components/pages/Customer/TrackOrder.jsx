@@ -126,9 +126,9 @@ import ProgressBar from './ProgressBar'
         size='2xl'
         
       >
-        <ModalOverlay
+        {/* <ModalOverlay
         bg='blackAlpha.300'
-        backdropFilter='blur(10px) hue-rotate(90deg)' />
+        backdropFilter='blur(10px) hue-rotate(90deg)' /> */}
         <ModalContent>
           <ModalHeader>Order Details</ModalHeader>
           <ModalCloseButton />
@@ -151,9 +151,9 @@ import ProgressBar from './ProgressBar'
           Order Date :  dwwd
             
         </Heading>
-        {/* <Text pt='2' fontSize='sm'>
+         <Text pt='2' fontSize='sm'>
           View a summary of all your clients over the last month.
-        </Text> */}
+        </Text>  
       </Box>
       <Box>
         <Heading size='md' textTransform='uppercase'>

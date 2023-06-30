@@ -41,9 +41,11 @@ import BookRequestAccCust from './components/pages/Admin/BookingCheck/BookReques
 import BookRequestCust from './components/pages/Admin/BookingCheck/BookRequestCust';
 import OrderAssign from './components/pages/Admin/OrdersReq/OrderAssign';
 import UnAssignedOrder from './components/pages/Admin/OrdersReq/UnAssignedOrder';
+import AcceptedBooking from './components/pages/Customer/Bookings/AcceptedBooking';
+import Enquiry from './components/pages/Customer/Enquiry/Enquiry';
 
 
-
+const HataBook = <AcceptedBooking/>
 
 const Helloasa = <TableScroll />;
 
@@ -96,6 +98,8 @@ function App() {
 
                      <Route path="packages" element={<Packages />} />
 
+                     <Route path="enqq" element={<Enquiry />} />
+
                      <Route path="orders" element={<Orders
                      
                      title={"Orders"}
@@ -104,7 +108,7 @@ function App() {
                          { name: "View Orders", content: HelloList22 },
                          
                           { name: "Track Order", content: HelloList33 },
-                        
+                          { name: "View Order on Map", content: HelloList33 },
                        ]}
                      />} />
                      <Route path="bookings" element={<Bookings
@@ -114,6 +118,7 @@ function App() {
                          { name: "Add booking", content: HelloList },
                          
                           { name: "View Boookings", content: HelloList22 },
+                          { name: "Accepted Boookings", content: HataBook },
                         //  { name: "Hello 33", content: HelloList22 },
                        ]} />} />  
             </Route>

@@ -198,9 +198,10 @@ const Home = () => {
             </button>
           </div>
 
-          {/* <div className="flex items-center justify-center">
-        <img src={hero} alt="hero" className="w-3/4 rounded-full" />
-      </div> */}
+           <div className="flex items-center justify-center">
+        {/* <img src={hero} alt="hero" className="w-3/4 rounded-full" /> */}
+        <h1>iuefw</h1>
+      </div>  
         </div>
       </div>
       <ModalDriver isVisible={showModal} onClose={() => setShowModal(false)}>

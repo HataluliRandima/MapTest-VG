@@ -67,6 +67,20 @@ const Chat = () => {
                 // )
                 } */}
               </li>
+
+              <li
+                // key={index}
+                className="w-screen break-words pr-6 lg:pr-0 lg:w-full"
+              >
+                {/* {el.nickname != null ? ( */}
+                   nickname : I am coming 
+                {/* // ) : (
+                //   <p className="text-base font-semibold text-purple-900 rounded py-1">
+                //     {el}
+                //   </p>
+                // )
+                } */}
+              </li>
             {/* ))}    */}
           </ul>
         </div>
